@@ -2,9 +2,10 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar } from "@fortawesome/free-solid-svg-icons";
 import axios from "axios";
 import { useEffect, useState } from "react";
+import ButtonComponent from "./MainBtn";
 import { Link } from "react-router-dom";
 
-function Movie() {
+function MainMovie() {
   const [state, setState] = useState({
     isFatched: false,
     data: [],
@@ -26,15 +27,18 @@ function Movie() {
         });
       });
   }, []);
-  // console.log(state.data.title[0]);
+  console.log(state.data);
 
   return (
-    <div className="container mx-auto ">
-      <h1 className="py-7 text-xl font-semibold">Popular Movies</h1>
-      <div className=" grid grid-cols-5  ">
+    <div className="container mx-auto overflow-hidden">
+      <div className="flex items-center py-7">
+        <h1 className="mr-5 text-2xl font-bold text-black">Trending</h1>
+        <ButtonComponent />
+      </div>
+      <div className=" flex overflow-auto ">
         {state?.data?.map((movie) => (
           <Link to={`/singlemovie/${movie.id}`}>
-            <div key={movie.id} className="w-[170px] ">
+            <div key={movie.id} className="w-[170px] shrink-0">
               <img
                 className="w-36 rounded-lg"
                 src={`https://www.themoviedb.org/t/p/w220_and_h330_face${movie.poster_path}`}
@@ -56,4 +60,4 @@ function Movie() {
   );
 }
 
-export default Movie;
+export default MainMovie;
