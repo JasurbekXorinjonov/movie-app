@@ -15,7 +15,7 @@ function LeftHeader() {
           <Link to={"/tv"}>Tv Shows</Link>
         </li>
         <li className="pr-5">
-          <Link>Pople</Link>
+          <Link to={"/people"}>Pople</Link>
         </li>
         <li className="pr-5">
           <Link>More</Link>

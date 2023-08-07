@@ -27,7 +27,6 @@ function MainMovie() {
         });
       });
   }, []);
-  console.log(state.data);
 
   return (
     <div className="container mx-auto overflow-hidden">

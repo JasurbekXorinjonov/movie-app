@@ -23,7 +23,7 @@ function ButtonComponent() {
   return (
     <div className="w-[203px] rounded-xl border border-blue-900">
       <button
-        className="rounded-xl px-5 delay-75 duration-2000 ease-in"
+        className="duration-2000 rounded-xl px-5 delay-75 ease-in"
         style={{ backgroundColor: button2BgColor, color: button2TextColor }}
         onClick={() => handleButtonClick(2)}
       >
